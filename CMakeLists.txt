@@ -16,7 +16,7 @@ add_action_files(DIRECTORY action FILES Prime.action)
 generate_messages(DEPENDENCIES actionlib_msgs std_msgs)
 
 catkin_package(
-  INCLUDE_DIRS include
+	#INCLUDE_DIRS include
   CATKIN_DEPENDS actionlib actionlib_msgs message_generation message_runtime roscpp rospy std_msgs std_srvs
 )
 

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <node name="hallowelt_publisher" pkg="hallowelt" type="publisher" output="screen" />
+    <node name="hallowelt_subscriber" pkg="hallowelt" type="subscriber" output="screen" />
+</launch>

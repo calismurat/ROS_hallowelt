@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+import rospy
+from std_msgs.msg import String
+
+rospy.init_node('hallowelt_publisher')
+pub_hallo = rospy.Publisher('hallo', String, queue_size=10)
+
+rate = rospy.Rate(1)
+
+message = 'Hallo Welt '
+counter = 0
+while not rospy.is_shutdown():
+  pub_hallo.publish( message + str(counter) )
+  counter += 1
+  rate.sleep()

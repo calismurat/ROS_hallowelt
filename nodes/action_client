@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+import rospy
+import actionlib
+import hallowelt.msg
+
+def prime_client():
+    client = actionlib.SimpleActionClient('prime', hallowelt.msg.PrimeAction)
+    client.wait_for_server()
+    goal = hallowelt.msg.PrimeGoal(start=90000000, stop=90005000)
+    client.send_goal(goal)
+    client.wait_for_result()
+    return client.get_result()
+
+if __name__ == '__main__':
+    try:
+        rospy.init_node('prime_client')
+        result = prime_client()
+        print("Result:" + str(result.success))
+    except rospy.ROSInterruptException:
+        print("program interrupted before completion")

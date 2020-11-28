@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node name="hallowelt_service_server" pkg="hallowelt" type="service_server" output="screen" />
+  <node name="hallowelt_service_client"
+    pkg="hallowelt"
+    type="service_client" 
+    output="screen"
+    args="0">
+  </node>
+</launch>

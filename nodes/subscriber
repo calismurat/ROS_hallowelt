@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+import rospy
+from std_msgs.msg import String
+
+def mycallback(arg):
+    rospy.loginfo(arg.data)
+
+rospy.init_node('hallowelt_subscriber')
+sub_hallo = rospy.Subscriber('hallo', String, mycallback)
+
+rospy.spin()
